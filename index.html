@@ -1,7 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel='icon' href='leo-logo3.ico' type='image/x-icon'/>
+<title>Radar</title>
+
+
 <head>
 <link rel="stylesheet" href="css/tabs.css" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -18,7 +21,7 @@
 	width: 100%;
 	height: 100%;
 	text-align: center;
-	background-color: #CCC;
+	background-color: #FFF;
     }
     
     #mapContainer {
@@ -35,8 +38,7 @@
 	font-size: small;
 }
 </style>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Radar Aéreo</title>
+
 
 <script>
 window.onload = function() {
@@ -47,20 +49,14 @@ window.onload = function() {
 
 <script>
 $(document).ready(function() {
-
   $('#selection').on('change', function() {
     change($(this).val());
   });
-
 });
-
-
 function change(sourceUrl) {
   var audio = document.getElementById("player");
   var source = document.getElementById("mp3_src");
-
   audio.pause();
-
   if (sourceUrl) {
     source.src = sourceUrl;
     audio.load();
@@ -69,82 +65,21 @@ function change(sourceUrl) {
 }
 </script>
 
- 
-	
-	<script>
+ 	<script>
     var frame = document.getElementById("myframe");
     var fdoc = frame.contentDocument;
-
     fdoc.write("Hello world"); // or whatever
 	</script>
 
 </head>
 
-<body>
-<table width="100%">
-  <tr>
-    <td width="8%" align="left"><img src="https://i.ibb.co/MP7XVx1/leo-logo3.png" width="50" height="50" border="0" usemap="#Map" /></td>
-	
-    <td width="50%">
- 
-    </td>
-	
-    <td width="29%" align="right">
 
-		<label for="selection">Aeroportos:</label>
-		<select id="selection">
-		  <option value="">- Selecione -</option>
-		  <option value="Http://d.liveatc.net/sbmk">MOC: RDO/ACC-BS</option>
-		  <option value="http://liveatc.com.br:4448/127.15ART">CGH TWR</option>
-		  <option value="hhttp://liveatc.com.br:4448/120.45">APP-SP</option>
-		  <option value="http://stm32.radiosrv.server6.com.br:8092/stream">GIG: GND/TWR/APP</option>
-		  <option value="http://liveatc.com.br:4448/118.5">SJK TWR</option>
-		  <option value="http://bos.liveatc.net/sbmq">MCP: TWR/APP/ACC-AZ</option>
-		  <option value="http://bos.liveatc.net/sbmg2">MGF: TWR/APP</option>
-		  <option value="http://bos.liveatc.net/sbsr">SJP: APP/ACC-BS/AFIS</option>
-		  <option value="http://bos.liveatc.net/sbpa">POA: GND/TWR/APP/BACO</option>
-		  <option value="http://bos.liveatc.net/sbct2">CWB: TWR/APP</option>
-		  <option value="http://bos.liveatc.net/sbvt3">VIX: APP/TWR/GND</option>
-		  <option value="http://bos.liveatc.net/sbfz4">FOR: TWR/APP/ACC-RF</option>
-		  <option value="http://liveatc.com.br:4448/sbbr-app2101">APP-BS</option>
-		  <option value="http://177.137.96.29:8000/GYNST">GYN: TWR/GND</option>
-		  <option value="http://atcmonitor.com.br:4448/sbanapp">APP APS</option>
-		  <option value="http://bos.liveatc.net/sbfi">IGU: Twr/App/Ctr/Misc</option>
-		  <option value="http://bos.liveatc.net/sbeg3">MAO: TWR/APP/ACC-AZ</option>
-		  <option value="http://bos.liveatc.net/sbju">JDO: Twr/Acc</option>
-		  <option value="http://liveatc.com.br:8000/uberaba">UBA: TWR/APP</option>
-		  <option value="http://liveatc.com.br:4448/sbbvAPP">BVB APP</option>
-		  <option value="http://liveatc.com.br:4448/sbbvTWR">BVB TWR</option>
-		  <option value="http://liveatc.com.br:4448/SBDN">SBDN: TWR/APP/ACC-CW</option>
-		  <option value="http://bos.liveatc.net/sbrp">RAO: TWR/ACC-BS</option>
-		  <option value="http://liveatc.com.br:8000/128.35">ACC-BS 128.35</option>
-		  <option value="http://bos.liveatc.net/sbrf_acc">ACC-RF</option>
-		  <option value="http://bos.liveatc.net/sbrf_12960">APP-RF</option>
-		  <option value="http://bos.liveatc.net/sbrf_11835">TWR-RF</option>
-		  <option value="http://bos.liveatc.net/sbrf_gnd">GND-RF</option>
-		  <option value="http://bos.liveatc.net/sblo2_twr_app">LDB: GND/TWR/APP</option>
-		  <option value="http://bos.liveatc.net/sbnf">NVT TWR</option>
-		  <option value="http://bos.liveatc.net/sbpf">PNZ RDO</option>
-		  <option value="http://bos.liveatc.net/sbqv">VDO: APP/AFIS</option>
-		  <option value="http://bos.liveatc.net/sbsn">STM: TWR/APP/ACC</option>
-		  <option value="http://bos.liveatc.net/sbte2">THE: TWR/APP</option>
-		  
-		</select>
-		<br/>
-	</td>
-	<td>
-		<audio id="player" controls="controls">
-		  <source id="mp3_src" src="http://d.liveatc.net/sbmk" type="audio/mp3" autoplay="autoplay"/>Your browser does not support the audio element.
-		</audio>
-	</td>
-    </td>
-  </tr>
-</table>
+<body>
 
 <iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms" id='myframe' src="https://www.flightradar24.com/simple?lat=-23.08639&lon=-46.95056&z=8" width="100%" height="100%"></iframe>
 
 <map name="Map" id="Map">
-  <area shape="rect" coords="2,1,131,46" href="http://www.radaraereo.com.br" />
+  <area shape="rect" coords="2,1,131,46" />
 </map>
 </body>
 </html>
